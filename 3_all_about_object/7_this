@@ -1,0 +1,25 @@
+const testFunction = function(){
+    return this;
+}
+console.log(testFunction());
+console.log(testFunction() == global);
+
+function IdoModel(name, year){
+    this.name = name;
+    this.year = year;
+}
+IdoModel.prototype.sayHello = function(){
+    function hello2(){
+        return `${this.name} ㅎㅇㅎㅇ`;
+    }
+    return hello2();
+}
+const yujin = new IdoModel('안유진', 2003);
+console.log(yujin.sayHello());
+
+function hihi(){
+    return `${this.name} ㅎㅇㅎㅇ`;
+}
+console.log(hihi.call(yujin));
+console.log(hihi.apply(yujin));
+

@@ -1,0 +1,18 @@
+class IdoModel{
+    name
+    year
+
+    constructor(name, year){
+        this.name = name
+        this.year = year
+    }
+}
+
+class FemaleIdol extends IdoModel{
+    dance(){
+        return '${name}이 춤을 춥니다'
+    }
+}
+const yujin = new FemaleIdol('안유진',2003)
+console.log(yujin)
+console.log(yujin.dance())
